@@ -1,11 +1,13 @@
+require 'colorize'
+
 time = Time.new
 
 def user_prompt
-	print ">>  "
+	print ">>  ".light_yellow
 end
 
 def bot_prompt
-	print "**  "
+	print "**  ".red
 end
 
 def get_response(input)
@@ -39,14 +41,14 @@ RESPONSES = { 'goodbye' => 'bye',
               'I groove to (.*) and (.*)' => 'I love %{c1} but I hate %{c2}'}
 
 bot_prompt
-puts "Hello, what's your name?"
+puts "Hello, what's your name?".light_red
 user_prompt
 name = gets.chomp
 bot_prompt
-puts "Hello #{name}"
+puts "Hello #{name}".light_red
 user_prompt
 
 while(input = gets.chomp) do
-  puts get_response(input)
+  puts get_response(input).light_red
   user_prompt
 end
