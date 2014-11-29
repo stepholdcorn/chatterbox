@@ -21,7 +21,7 @@ def get_response(input)
   	/#{key}/ =~ input
   	bot_prompt
   	response = RESPONSES[key]
-	response.nil? ? 'sorry?' : response % { c1: $1, c2: $2}
+	response.nil? ? 'sorry?' : response % { c1: $1, c2: $2, c3: $3}
 	end
 	
 end
@@ -38,7 +38,7 @@ RESPONSES = { 'goodbye' => 'bye',
               'the weather is (.*)' => 'I hate it when it\'s %{c1}', 
               'I live in (.*)' => 'I\'ve never been to %{c1}, is it nice there?',
               'I love (.*)' => 'I love %{c1} too', 
-              'I groove to (.*) and (.*)' => 'I love %{c1} but I hate %{c2}'}
+              'I groove to (.*), (.*) and (.*)' => 'I love %{c1} and %{c3}, but I hate %{c2}'}
 
 bot_prompt
 puts "Hello, what's your name?".light_red
