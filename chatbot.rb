@@ -1,8 +1,6 @@
 require 'colorize'
 require './responses.rb'
 
-
-
 def user_prompt
 	print ">>  ".light_yellow
 end
